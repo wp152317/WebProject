@@ -21,7 +21,8 @@
 					<div class="form-group" style="text-align: left;margin-bottom:0;">
 						<label for="id">Email address</label> <input type="email"
 							class="form-control" id="id" name='id'
-							aria-describedby="emailHelp" placeholder="abc@abc.com"> <small
+							aria-describedby="emailHelp" placeholder="abc@abc.com"
+							value="<%=(request.getParameter("id")==null ? "" : request.getParameter("id"))%>"> <small
 							id="emailHelp" class="form-text text-muted">Enter Email </small>
 					</div>
 					<div class="form-group" style="text-align: left;margin-top:0;">
