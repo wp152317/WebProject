@@ -263,7 +263,7 @@ var Color=['#ffffff','blue','green','red','black','brown','skyblue','purple','gr
 		console.log(r,c,event.button,gone[r][c]);
 		if(event.button!=0)return;
 		if(gone[r][c]==0)return;
-		var str="poscenter closebutton wrap active";
+		var str="poscenter closebutton wrap actives";
 		for(var it=-1;it<=1;it++){
 			for(var jt=-1;jt<=1;jt++){
 				if(it+r>=0&&it+r<y&&jt+c>=0&&jt+c<x
