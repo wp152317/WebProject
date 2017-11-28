@@ -18,4 +18,7 @@
 }
 .overclick{
 	border-width:0px;background-color:red;width:30px;height:30px;padding:0; 
+}
+.active{
+	border-style:inset;
 } 

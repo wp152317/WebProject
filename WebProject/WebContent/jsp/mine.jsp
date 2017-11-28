@@ -217,23 +217,62 @@ var Color=['#ffffff','blue','green','red','black','brown','skyblue','purple','gr
 	}
 	function autoOpen(r,c){
 		var mineCnt=0;
+		var str='poscenter closebutton wrap';
+		for(var it=-1;it<=1;it++){
+			for(var jt=-1;jt<=1;jt++){
+				if(it+r>=0&&it+r<y&&jt+c>=0&&jt+c<x
+						&&flags[it+r][jt+c]==0){
+					if(gone[it+r][jt+c]==0){
+						document.getElementById
+						('btn'+(r+it)+'_'+(c+jt)).setAttribute('class',str);
+					}
+				}
+			}
+		}
 		for(var it=-1;it<=1;it++){
 			for(var jt=-1;jt<=1;jt++){
 				if(it+r>=0&&it+r<y&&jt+c>=0&&jt+c<x
 						&&flags[it+r][jt+c]==1){
-					if(plate[it+r][jt+c]>=0){
-						gameover(it+r,jt+c);
-					}
 					mineCnt++;
 				}
 			}
 		}
-		if(plate[r][c]==mineCnt){
-			for(var it=-1;it<=1;it++){
-				for(var jt=-1;jt<=1;jt++){
-					if(it+r>=0&&it+r<y&&jt+c>=0&&jt+c<x){
-						bfs(it+r,jt+c);
-					} 
+		if(mineCnt!=plate[r][c])
+			return;
+		var flg=false;
+		for(var it=-1;it<=1;it++){
+			for(var jt=-1;jt<=1;jt++){
+				if(it+r>=0&&it+r<y&&jt+c>=0&&jt+c<x){
+					if(plate[it+r][jt+c]>=0&&flags[it+r][jt+c]==1){
+						gameover(it+r,jt+c);
+						flg=true;
+					}
+				}
+			}
+		}
+		if(flg)return;
+		for(var it=-1;it<=1;it++){
+			for(var jt=-1;jt<=1;jt++){
+				if(it+r>=0&&it+r<y&&jt+c>=0&&jt+c<x){
+					bfs(it+r,jt+c);
+				} 
+			}
+		}
+	}
+	function startClick(r,c){
+		console.log(r,c,event.button,gone[r][c]);
+		if(event.button!=0)return;
+		if(gone[r][c]==0)return;
+		var str="poscenter closebutton wrap active";
+		for(var it=-1;it<=1;it++){
+			for(var jt=-1;jt<=1;jt++){
+				if(it+r>=0&&it+r<y&&jt+c>=0&&jt+c<x
+						&&flags[it+r][jt+c]==0){
+					if(gone[it+r][jt+c]==0){
+						document.getElementById
+						('btn'+(r+it)+'_'+(c+jt)).setAttribute('class',str);
+						console.log(r+it,c+jt);
+					}
 				}
 			}
 		}
@@ -312,7 +351,8 @@ var Color=['#ffffff','blue','green','red','black','brown','skyblue','purple','gr
 						<div class="poscenter out backblack">
 								<div class='poscenter line wrap'></div>
 							<% for(int j=0;j<x;j++){ %>
-								<button class="poscenter closebutton wrap" 
+								<button class="poscenter closebutton wrap"
+								onmousedown="startClick(<%=i %>,<%=j %>)"
 								onmouseup="check(<%=i %>,<%=j %>)" id="btn<%=i%>_<%=j%>"><b></b></button>
 								<div class='poscenter line wrap'></div>
 							<%} %>
