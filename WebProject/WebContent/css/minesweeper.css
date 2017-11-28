@@ -1,0 +1,21 @@
+.closebutton{
+	border-width:2px;background-color:#c8c8c8;width:30px;height:30px;padding:0;
+}
+.openbutton{
+	border-width:0px;background-color:#a0a0a0;width:30px;height:30px;padding:0;
+}
+.button{
+	padding:0px;
+}
+.line{
+	padding:1px;background-color:#000000;
+}
+.backblack{
+	background-color:black;
+}
+.scoreboard{
+	display:table-cell;background-color:white;color:red;width:133px;text-align:center;
+}
+.overclick{
+	border-width:0px;background-color:red;width:30px;height:30px;padding:0; 
+} 

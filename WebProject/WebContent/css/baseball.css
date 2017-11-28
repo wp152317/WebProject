@@ -1,0 +1,11 @@
+.basecard{
+	background-color:black;color:white;width:100px;font-size:60px;
+	height:150px;text-align:center;
+}
+.basebutton{
+	background-color:#303030;color:white;width:100px;height:50px;
+	font-size:60px;text-align:center;
+}
+.line{
+	padding:1px;background-color:#ffffff
+}

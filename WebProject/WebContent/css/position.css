@@ -1,0 +1,12 @@
+.poscenter{
+	margin-left:auto;
+	margin-right:auto;
+}
+.out{
+	display:table;
+	text-align:center;
+}
+.wrap{
+	display:table-cell;
+	vertical-align:middle;
+}
