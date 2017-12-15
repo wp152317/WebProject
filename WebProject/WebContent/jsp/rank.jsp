@@ -134,14 +134,14 @@ window.onload=function(){
 <%@include file="menu.jsp" %>
 <div class="poscenter" style="position:absolute;top:0;left:0;width:100%;height:100%;display:table;">
 	<div style="text-align:center;display:table-cell;vertical-align:middle;">
-		<div class="btn-group poscenter" data-toggle="buttons" style="display:table;">
+		<div class="btn-group poscenter" data-toggle="buttons" style="display:table;margin-top:50px;">
 			<label class="btn btn-secondary" onclick="showBase()" id="base"> <input type="radio"
 				name="options" id="option1" autocomplete="off" checked> 야구게임
 			</label> <label class="btn btn-secondary " onclick="showMine()" id="mine"> <input type="radio"
 				name="options" id="option2" autocomplete="off" > 지뢰찾기
 			</label>
 		</div>
-		<div class="btn-group poscenter" data-toggle="buttons" style="display:table;margin-bottom:100px;">
+		<div class="btn-group poscenter" data-toggle="buttons" style="display:table;margin-bottom:50px;">
 			<label class="btn btn-secondary" onclick="setAll()" id="all"> <input type="radio"
 				name="options" id="option1" autocomplete="off" checked> 전체랭킹
 			</label> <label class="btn btn-secondary " onclick="setOnly()" id="only"> <input type="radio"
